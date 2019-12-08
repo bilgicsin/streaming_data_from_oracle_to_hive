@@ -1,0 +1,1298 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.2">
+    <description></description>
+    <groupId>7c84501d-d10c-407c-b9f3-1d80e38fe36a</groupId>
+    <name>oracletohive</name>
+    <snippet>
+        <controllerServices>
+            <id>1d7b1fd9-389c-3dd0-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <bundle>
+                <artifact>nifi-dbcp-service-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.7.0.3.2.0.0-520</version>
+            </bundle>
+            <comments></comments>
+            <descriptors>
+                <entry>
+                    <key>Database Connection URL</key>
+                    <value>
+                        <name>Database Connection URL</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Database Driver Class Name</key>
+                    <value>
+                        <name>Database Driver Class Name</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>database-driver-locations</key>
+                    <value>
+                        <name>database-driver-locations</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Database User</key>
+                    <value>
+                        <name>Database User</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Password</key>
+                    <value>
+                        <name>Password</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Max Wait Time</key>
+                    <value>
+                        <name>Max Wait Time</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Max Total Connections</key>
+                    <value>
+                        <name>Max Total Connections</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Validation-query</key>
+                    <value>
+                        <name>Validation-query</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>dbcp-max-conn-lifetime</key>
+                    <value>
+                        <name>dbcp-max-conn-lifetime</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>dbcp-max-idle-conns</key>
+                    <value>
+                        <name>dbcp-max-idle-conns</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>dbcp-min-evictable-idle-time</key>
+                    <value>
+                        <name>dbcp-min-evictable-idle-time</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>dbcp-min-idle-conns</key>
+                    <value>
+                        <name>dbcp-min-idle-conns</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>dbcp-soft-min-evictable-idle-time</key>
+                    <value>
+                        <name>dbcp-soft-min-evictable-idle-time</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>dbcp-time-between-eviction-runs</key>
+                    <value>
+                        <name>dbcp-time-between-eviction-runs</name>
+                    </value>
+                </entry>
+            </descriptors>
+            <name>oracleDBConnnection</name>
+            <persistsState>false</persistsState>
+            <properties>
+                <entry>
+                    <key>Database Connection URL</key>
+                    <value>jdbc:oracle:thin:@dwh-tns.iski.local:1521/bim</value>
+                </entry>
+                <entry>
+                    <key>Database Driver Class Name</key>
+                    <value>oracle.jdbc.driver.OracleDriver</value>
+                </entry>
+                <entry>
+                    <key>database-driver-locations</key>
+                    <value>/usr/hdf/current/nifi/lib/ojdbc8.jar</value>
+                </entry>
+                <entry>
+                    <key>Database User</key>
+                    <value>buyun</value>
+                </entry>
+                <entry>
+                    <key>Password</key>
+                </entry>
+                <entry>
+                    <key>Max Wait Time</key>
+                    <value>500 millis</value>
+                </entry>
+                <entry>
+                    <key>Max Total Connections</key>
+                    <value>8</value>
+                </entry>
+                <entry>
+                    <key>Validation-query</key>
+                </entry>
+                <entry>
+                    <key>dbcp-max-conn-lifetime</key>
+                    <value>-1</value>
+                </entry>
+                <entry>
+                    <key>dbcp-max-idle-conns</key>
+                    <value>8</value>
+                </entry>
+                <entry>
+                    <key>dbcp-min-evictable-idle-time</key>
+                    <value>30 mins</value>
+                </entry>
+                <entry>
+                    <key>dbcp-min-idle-conns</key>
+                    <value>0</value>
+                </entry>
+                <entry>
+                    <key>dbcp-soft-min-evictable-idle-time</key>
+                    <value>-1</value>
+                </entry>
+                <entry>
+                    <key>dbcp-time-between-eviction-runs</key>
+                    <value>-1</value>
+                </entry>
+            </properties>
+            <state>ENABLED</state>
+            <type>org.apache.nifi.dbcp.DBCPConnectionPool</type>
+        </controllerServices>
+        <processGroups>
+            <id>46967a5b-3c72-3c86-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>0.0</y>
+            </position>
+            <comments></comments>
+            <contents>
+                <connections>
+                    <id>6bf42615-563e-3224-0000-000000000000</id>
+                    <parentGroupId>46967a5b-3c72-3c86-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>46967a5b-3c72-3c86-0000-000000000000</groupId>
+                        <id>89f4f903-a274-3b35-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>success</selectedRelationships>
+                    <source>
+                        <groupId>46967a5b-3c72-3c86-0000-000000000000</groupId>
+                        <id>723d9048-957a-3ccb-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <connections>
+                    <id>858d5d53-d761-330e-0000-000000000000</id>
+                    <parentGroupId>46967a5b-3c72-3c86-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>46967a5b-3c72-3c86-0000-000000000000</groupId>
+                        <id>d8e1adee-e791-3094-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>matched</selectedRelationships>
+                    <source>
+                        <groupId>46967a5b-3c72-3c86-0000-000000000000</groupId>
+                        <id>89f4f903-a274-3b35-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <connections>
+                    <id>b496443a-d7c6-33b2-0000-000000000000</id>
+                    <parentGroupId>46967a5b-3c72-3c86-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>46967a5b-3c72-3c86-0000-000000000000</groupId>
+                        <id>43288d03-b660-32c4-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>success</selectedRelationships>
+                    <source>
+                        <groupId>46967a5b-3c72-3c86-0000-000000000000</groupId>
+                        <id>d8e1adee-e791-3094-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <connections>
+                    <id>b5830e26-5301-3a51-0000-000000000000</id>
+                    <parentGroupId>46967a5b-3c72-3c86-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>46967a5b-3c72-3c86-0000-000000000000</groupId>
+                        <id>723d9048-957a-3ccb-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>success</selectedRelationships>
+                    <source>
+                        <groupId>46967a5b-3c72-3c86-0000-000000000000</groupId>
+                        <id>b0950b10-acde-3373-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <controllerServices>
+                    <id>a81d8642-0b75-3392-0000-000000000000</id>
+                    <parentGroupId>46967a5b-3c72-3c86-0000-000000000000</parentGroupId>
+                    <bundle>
+                        <artifact>nifi-hive-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0.3.2.0.0-520</version>
+                    </bundle>
+                    <comments></comments>
+                    <descriptors>
+                        <entry>
+                            <key>hive-db-connect-url</key>
+                            <value>
+<name>hive-db-connect-url</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>hive-config-resources</key>
+                            <value>
+<name>hive-config-resources</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>hive-db-user</key>
+                            <value>
+<name>hive-db-user</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>hive-db-password</key>
+                            <value>
+<name>hive-db-password</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>hive-max-wait-time</key>
+                            <value>
+<name>hive-max-wait-time</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>hive-max-total-connections</key>
+                            <value>
+<name>hive-max-total-connections</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Validation-query</key>
+                            <value>
+<name>Validation-query</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>kerberos-credentials-service</key>
+                            <value>
+<identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>
+<name>kerberos-credentials-service</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Kerberos Principal</key>
+                            <value>
+<name>Kerberos Principal</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Kerberos Keytab</key>
+                            <value>
+<name>Kerberos Keytab</name>
+                            </value>
+                        </entry>
+                    </descriptors>
+                    <name>HiveConnectionPool</name>
+                    <persistsState>false</persistsState>
+                    <properties>
+                        <entry>
+                            <key>hive-db-connect-url</key>
+                            <value>jdbc:hive2://bigdatamaster01.iski.local:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2</value>
+                        </entry>
+                        <entry>
+                            <key>hive-config-resources</key>
+                            <value>/etc/hive/conf/hive-site.xml</value>
+                        </entry>
+                        <entry>
+                            <key>hive-db-user</key>
+                            <value>hive</value>
+                        </entry>
+                        <entry>
+                            <key>hive-db-password</key>
+                        </entry>
+                        <entry>
+                            <key>hive-max-wait-time</key>
+                            <value>500 millis</value>
+                        </entry>
+                        <entry>
+                            <key>hive-max-total-connections</key>
+                            <value>8</value>
+                        </entry>
+                        <entry>
+                            <key>Validation-query</key>
+                        </entry>
+                        <entry>
+                            <key>kerberos-credentials-service</key>
+                        </entry>
+                        <entry>
+                            <key>Kerberos Principal</key>
+                        </entry>
+                        <entry>
+                            <key>Kerberos Keytab</key>
+                        </entry>
+                    </properties>
+                    <state>ENABLED</state>
+                    <type>org.apache.nifi.dbcp.hive.HiveConnectionPool</type>
+                </controllerServices>
+                <processors>
+                    <id>43288d03-b660-32c4-0000-000000000000</id>
+                    <parentGroupId>46967a5b-3c72-3c86-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>431.20553216106964</x>
+                        <y>318.2397851355001</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-hive-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0.3.2.0.0-520</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Hive Database Connection Pooling Service</key>
+<value>
+    <identifiesControllerService>org.apache.nifi.dbcp.hive.HiveDBCPService</identifiesControllerService>
+    <name>Hive Database Connection Pooling Service</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-batch-size</key>
+<value>
+    <name>hive-batch-size</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-charset</key>
+<value>
+    <name>hive-charset</name>
+</value>
+                            </entry>
+                            <entry>
+<key>statement-delimiter</key>
+<value>
+    <name>statement-delimiter</name>
+</value>
+                            </entry>
+                            <entry>
+<key>rollback-on-failure</key>
+<value>
+    <name>rollback-on-failure</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Hive Database Connection Pooling Service</key>
+<value>a81d8642-0b75-3392-0000-000000000000</value>
+                            </entry>
+                            <entry>
+<key>hive-batch-size</key>
+<value>100</value>
+                            </entry>
+                            <entry>
+<key>hive-charset</key>
+<value>UTF-8</value>
+                            </entry>
+                            <entry>
+<key>statement-delimiter</key>
+<value>;</value>
+                            </entry>
+                            <entry>
+<key>rollback-on-failure</key>
+<value>false</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>PutHiveQL</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>retry</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.hive.PutHiveQL</type>
+                </processors>
+                <processors>
+                    <id>723d9048-957a-3ccb-0000-000000000000</id>
+                    <parentGroupId>46967a5b-3c72-3c86-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>-655.0166967806803</x>
+                        <y>735.7198836530891</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-avro-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0.3.2.0.0-520</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>JSON container options</key>
+<value>
+    <name>JSON container options</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Wrap Single Record</key>
+<value>
+    <name>Wrap Single Record</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Avro schema</key>
+<value>
+    <name>Avro schema</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>JSON container options</key>
+<value>array</value>
+                            </entry>
+                            <entry>
+<key>Wrap Single Record</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>Avro schema</key>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>ConvertAvroToJSON</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.avro.ConvertAvroToJSON</type>
+                </processors>
+                <processors>
+                    <id>89f4f903-a274-3b35-0000-000000000000</id>
+                    <parentGroupId>46967a5b-3c72-3c86-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>-303.43341593868604</x>
+                        <y>324.31954283334426</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-standard-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0.3.2.0.0-520</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>ERROR</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>4</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Destination</key>
+<value>
+    <name>Destination</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Return Type</key>
+<value>
+    <name>Return Type</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Path Not Found Behavior</key>
+<value>
+    <name>Path Not Found Behavior</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Null Value Representation</key>
+<value>
+    <name>Null Value Representation</name>
+</value>
+                            </entry>
+                            <entry>
+<key>ALINMATARIHI</key>
+<value>
+    <name>ALINMATARIHI</name>
+</value>
+                            </entry>
+                            <entry>
+<key>BAKIYE</key>
+<value>
+    <name>BAKIYE</name>
+</value>
+                            </entry>
+                            <entry>
+<key>BORC</key>
+<value>
+    <name>BORC</name>
+</value>
+                            </entry>
+                            <entry>
+<key>BUZZERDURUMU</key>
+<value>
+    <name>BUZZERDURUMU</name>
+</value>
+                            </entry>
+                            <entry>
+<key>CONNECTIONCOUNT</key>
+<value>
+    <name>CONNECTIONCOUNT</name>
+</value>
+                            </entry>
+                            <entry>
+<key>CREATEDATE</key>
+<value>
+    <name>CREATEDATE</name>
+</value>
+                            </entry>
+                            <entry>
+<key>CREATEUSER</key>
+<value>
+    <name>CREATEUSER</name>
+</value>
+                            </entry>
+                            <entry>
+<key>DBM</key>
+<value>
+    <name>DBM</name>
+</value>
+                            </entry>
+                            <entry>
+<key>DETAILID</key>
+<value>
+    <name>DETAILID</name>
+</value>
+                            </entry>
+                            <entry>
+<key>DIVIDER</key>
+<value>
+    <name>DIVIDER</name>
+</value>
+                            </entry>
+                            <entry>
+<key>ENDEKS</key>
+<value>
+    <name>ENDEKS</name>
+</value>
+                            </entry>
+                            <entry>
+<key>ETL_INSERT_DATE</key>
+<value>
+    <name>ETL_INSERT_DATE</name>
+</value>
+                            </entry>
+                            <entry>
+<key>KARTISLEMNO</key>
+<value>
+    <name>KARTISLEMNO</name>
+</value>
+                            </entry>
+                            <entry>
+<key>KOMUTINDEKS</key>
+<value>
+    <name>KOMUTINDEKS</name>
+</value>
+                            </entry>
+                            <entry>
+<key>KURUMID</key>
+<value>
+    <name>KURUMID</name>
+</value>
+                            </entry>
+                            <entry>
+<key>LAST_IP</key>
+<value>
+    <name>LAST_IP</name>
+</value>
+                            </entry>
+                            <entry>
+<key>METERCOMMANDCOUNTER</key>
+<value>
+    <name>METERCOMMANDCOUNTER</name>
+</value>
+                            </entry>
+                            <entry>
+<key>MOBILEPILDURUMU</key>
+<value>
+    <name>MOBILEPILDURUMU</name>
+</value>
+                            </entry>
+                            <entry>
+<key>OKUMADURUMU</key>
+<value>
+    <name>OKUMADURUMU</name>
+</value>
+                            </entry>
+                            <entry>
+<key>ONCEKITUKETIM</key>
+<value>
+    <name>ONCEKITUKETIM</name>
+</value>
+                            </entry>
+                            <entry>
+<key>ONCEKITUKETIMM3</key>
+<value>
+    <name>ONCEKITUKETIMM3</name>
+</value>
+                            </entry>
+                            <entry>
+<key>ORTALAMATUKETIM</key>
+<value>
+    <name>ORTALAMATUKETIM</name>
+</value>
+                            </entry>
+                            <entry>
+<key>ORTALAMATUKETIMM3</key>
+<value>
+    <name>ORTALAMATUKETIMM3</name>
+</value>
+                            </entry>
+                            <entry>
+<key>PILDURUMU</key>
+<value>
+    <name>PILDURUMU</name>
+</value>
+                            </entry>
+                            <entry>
+<key>SAYACDATAID</key>
+<value>
+    <name>SAYACDATAID</name>
+</value>
+                            </entry>
+                            <entry>
+<key>SAYACHATA</key>
+<value>
+    <name>SAYACHATA</name>
+</value>
+                            </entry>
+                            <entry>
+<key>SAYACID</key>
+<value>
+    <name>SAYACID</name>
+</value>
+                            </entry>
+                            <entry>
+<key>SAYACTUKETIM</key>
+<value>
+    <name>SAYACTUKETIM</name>
+</value>
+                            </entry>
+                            <entry>
+<key>SAYACTUKETIMM3</key>
+<value>
+    <name>SAYACTUKETIMM3</name>
+</value>
+                            </entry>
+                            <entry>
+<key>SONKREDIYUKLENMETARIHI</key>
+<value>
+    <name>SONKREDIYUKLENMETARIHI</name>
+</value>
+                            </entry>
+                            <entry>
+<key>UPDATEDATE</key>
+<value>
+    <name>UPDATEDATE</name>
+</value>
+                            </entry>
+                            <entry>
+<key>UPDATEUSER</key>
+<value>
+    <name>UPDATEUSER</name>
+</value>
+                            </entry>
+                            <entry>
+<key>VANADURUMU</key>
+<value>
+    <name>VANADURUMU</name>
+</value>
+                            </entry>
+                            <entry>
+<key>VERIAYI</key>
+<value>
+    <name>VERIAYI</name>
+</value>
+                            </entry>
+                            <entry>
+<key>VERIGUNU</key>
+<value>
+    <name>VERIGUNU</name>
+</value>
+                            </entry>
+                            <entry>
+<key>VERIYILI</key>
+<value>
+    <name>VERIYILI</name>
+</value>
+                            </entry>
+                            <entry>
+<key>VERSION</key>
+<value>
+    <name>VERSION</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Destination</key>
+<value>flowfile-attribute</value>
+                            </entry>
+                            <entry>
+<key>Return Type</key>
+<value>json</value>
+                            </entry>
+                            <entry>
+<key>Path Not Found Behavior</key>
+<value>ignore</value>
+                            </entry>
+                            <entry>
+<key>Null Value Representation</key>
+<value>empty string</value>
+                            </entry>
+                            <entry>
+<key>ALINMATARIHI</key>
+<value>$.ALINMATARIHI</value>
+                            </entry>
+                            <entry>
+<key>BAKIYE</key>
+<value>$.BAKIYE</value>
+                            </entry>
+                            <entry>
+<key>BORC</key>
+<value>$.BORC</value>
+                            </entry>
+                            <entry>
+<key>BUZZERDURUMU</key>
+<value>$.BUZZERDURUMU</value>
+                            </entry>
+                            <entry>
+<key>CONNECTIONCOUNT</key>
+<value>$.CONNECTIONCOUNT</value>
+                            </entry>
+                            <entry>
+<key>CREATEDATE</key>
+<value>$.CREATEDATE</value>
+                            </entry>
+                            <entry>
+<key>CREATEUSER</key>
+<value>$.CREATEUSER</value>
+                            </entry>
+                            <entry>
+<key>DBM</key>
+<value>$.DBM</value>
+                            </entry>
+                            <entry>
+<key>DETAILID</key>
+<value>$.DETAILID</value>
+                            </entry>
+                            <entry>
+<key>DIVIDER</key>
+<value>$.DIVIDER</value>
+                            </entry>
+                            <entry>
+<key>ENDEKS</key>
+<value>$.ENDEKS</value>
+                            </entry>
+                            <entry>
+<key>ETL_INSERT_DATE</key>
+<value>$.ETL_INSERT_DATE</value>
+                            </entry>
+                            <entry>
+<key>KARTISLEMNO</key>
+<value>$.KARTISLEMNO</value>
+                            </entry>
+                            <entry>
+<key>KOMUTINDEKS</key>
+<value>$.KOMUTINDEKS</value>
+                            </entry>
+                            <entry>
+<key>KURUMID</key>
+<value>$.KURUMID</value>
+                            </entry>
+                            <entry>
+<key>LAST_IP</key>
+<value>$.LAST_IP</value>
+                            </entry>
+                            <entry>
+<key>METERCOMMANDCOUNTER</key>
+<value>$.METERCOMMANDCOUNTER</value>
+                            </entry>
+                            <entry>
+<key>MOBILEPILDURUMU</key>
+<value>$.MOBILEPILDURUMU</value>
+                            </entry>
+                            <entry>
+<key>OKUMADURUMU</key>
+<value>$.OKUMADURUMU</value>
+                            </entry>
+                            <entry>
+<key>ONCEKITUKETIM</key>
+<value>$.ONCEKITUKETIM</value>
+                            </entry>
+                            <entry>
+<key>ONCEKITUKETIMM3</key>
+<value>$.ONCEKITUKETIMM3</value>
+                            </entry>
+                            <entry>
+<key>ORTALAMATUKETIM</key>
+<value>$.ORTALAMATUKETIM</value>
+                            </entry>
+                            <entry>
+<key>ORTALAMATUKETIMM3</key>
+<value>$.ORTALAMATUKETIMM3</value>
+                            </entry>
+                            <entry>
+<key>PILDURUMU</key>
+<value>$.PILDURUMU</value>
+                            </entry>
+                            <entry>
+<key>SAYACDATAID</key>
+<value>$.SAYACDATAID</value>
+                            </entry>
+                            <entry>
+<key>SAYACHATA</key>
+<value>$.SAYACHATA</value>
+                            </entry>
+                            <entry>
+<key>SAYACID</key>
+<value>$.SAYACID</value>
+                            </entry>
+                            <entry>
+<key>SAYACTUKETIM</key>
+<value>$.SAYACTUKETIM</value>
+                            </entry>
+                            <entry>
+<key>SAYACTUKETIMM3</key>
+<value>$.SAYACTUKETIMM3</value>
+                            </entry>
+                            <entry>
+<key>SONKREDIYUKLENMETARIHI</key>
+<value>$.SONKREDIYUKLENMETARIHI</value>
+                            </entry>
+                            <entry>
+<key>UPDATEDATE</key>
+<value>$.UPDATEDATE</value>
+                            </entry>
+                            <entry>
+<key>UPDATEUSER</key>
+<value>$.UPDATEUSER</value>
+                            </entry>
+                            <entry>
+<key>VANADURUMU</key>
+<value>$.VANADURUMU</value>
+                            </entry>
+                            <entry>
+<key>VERIAYI</key>
+<value>$.VERIAYI</value>
+                            </entry>
+                            <entry>
+<key>VERIGUNU</key>
+<value>$.VERIGUNU</value>
+                            </entry>
+                            <entry>
+<key>VERIYILI</key>
+<value>$.VERIYILI</value>
+                            </entry>
+                            <entry>
+<key>VERSION</key>
+<value>$.VERSION</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>25</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>Pull Key Attributes</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>matched</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>unmatched</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.standard.EvaluateJsonPath</type>
+                </processors>
+                <processors>
+                    <id>b0950b10-acde-3373-0000-000000000000</id>
+                    <parentGroupId>46967a5b-3c72-3c86-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>-971.1059284613034</x>
+                        <y>340.3591644812277</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-standard-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0.3.2.0.0-520</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Database Connection Pooling Service</key>
+<value>
+    <identifiesControllerService>org.apache.nifi.dbcp.DBCPService</identifiesControllerService>
+    <name>Database Connection Pooling Service</name>
+</value>
+                            </entry>
+                            <entry>
+<key>db-fetch-db-type</key>
+<value>
+    <name>db-fetch-db-type</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Table Name</key>
+<value>
+    <name>Table Name</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Columns to Return</key>
+<value>
+    <name>Columns to Return</name>
+</value>
+                            </entry>
+                            <entry>
+<key>db-fetch-where-clause</key>
+<value>
+    <name>db-fetch-where-clause</name>
+</value>
+                            </entry>
+                            <entry>
+<key>db-fetch-sql-query</key>
+<value>
+    <name>db-fetch-sql-query</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Maximum-value Columns</key>
+<value>
+    <name>Maximum-value Columns</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Max Wait Time</key>
+<value>
+    <name>Max Wait Time</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Fetch Size</key>
+<value>
+    <name>Fetch Size</name>
+</value>
+                            </entry>
+                            <entry>
+<key>qdbt-max-rows</key>
+<value>
+    <name>qdbt-max-rows</name>
+</value>
+                            </entry>
+                            <entry>
+<key>qdbt-output-batch-size</key>
+<value>
+    <name>qdbt-output-batch-size</name>
+</value>
+                            </entry>
+                            <entry>
+<key>qdbt-max-frags</key>
+<value>
+    <name>qdbt-max-frags</name>
+</value>
+                            </entry>
+                            <entry>
+<key>dbf-normalize</key>
+<value>
+    <name>dbf-normalize</name>
+</value>
+                            </entry>
+                            <entry>
+<key>dbf-user-logical-types</key>
+<value>
+    <name>dbf-user-logical-types</name>
+</value>
+                            </entry>
+                            <entry>
+<key>dbf-default-precision</key>
+<value>
+    <name>dbf-default-precision</name>
+</value>
+                            </entry>
+                            <entry>
+<key>dbf-default-scale</key>
+<value>
+    <name>dbf-default-scale</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>PRIMARY</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Database Connection Pooling Service</key>
+<value>1d7b1fd9-389c-3dd0-0000-000000000000</value>
+                            </entry>
+                            <entry>
+<key>db-fetch-db-type</key>
+<value>Oracle 12+</value>
+                            </entry>
+                            <entry>
+<key>Table Name</key>
+<value>DWH.gprssayacdetail</value>
+                            </entry>
+                            <entry>
+<key>Columns to Return</key>
+                            </entry>
+                            <entry>
+<key>db-fetch-where-clause</key>
+                            </entry>
+                            <entry>
+<key>db-fetch-sql-query</key>
+                            </entry>
+                            <entry>
+<key>Maximum-value Columns</key>
+<value>ALINMATARIHI</value>
+                            </entry>
+                            <entry>
+<key>Max Wait Time</key>
+<value>0 seconds</value>
+                            </entry>
+                            <entry>
+<key>Fetch Size</key>
+<value>0</value>
+                            </entry>
+                            <entry>
+<key>qdbt-max-rows</key>
+<value>100</value>
+                            </entry>
+                            <entry>
+<key>qdbt-output-batch-size</key>
+<value>0</value>
+                            </entry>
+                            <entry>
+<key>qdbt-max-frags</key>
+<value>0</value>
+                            </entry>
+                            <entry>
+<key>dbf-normalize</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>dbf-user-logical-types</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>dbf-default-precision</key>
+<value>10</value>
+                            </entry>
+                            <entry>
+<key>dbf-default-scale</key>
+<value>0</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>QueryDatabaseTable</name>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.standard.QueryDatabaseTable</type>
+                </processors>
+                <processors>
+                    <id>d8e1adee-e791-3094-0000-000000000000</id>
+                    <parentGroupId>46967a5b-3c72-3c86-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>72.17711579627758</x>
+                        <y>724.9784076504558</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-standard-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0.3.2.0.0-520</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Regular Expression</key>
+<value>
+    <name>Regular Expression</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Replacement Value</key>
+<value>
+    <name>Replacement Value</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Character Set</key>
+<value>
+    <name>Character Set</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Maximum Buffer Size</key>
+<value>
+    <name>Maximum Buffer Size</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Replacement Strategy</key>
+<value>
+    <name>Replacement Strategy</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Evaluation Mode</key>
+<value>
+    <name>Evaluation Mode</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Regular Expression</key>
+<value>(?s)(^.*$)</value>
+                            </entry>
+                            <entry>
+<key>Replacement Value</key>
+<value>insert into table testdb.GPRSSAYACDETAILLIVE values("${ALINMATARIHI}","${BAKIYE}","${BORC}","${BUZZERDURUMU}","${CONNECTIONCOUNT}","${CREATEDATE}","${CREATEUSER}","${DBM}","${DETAILID}","${DIVIDER}","${ENDEKS}","${KARTISLEMNO}","${KOMUTINDEKS}","${KURUMID}","${LAST_IP}","${METERCOMMANDCOUNTER}","${MOBILEPILDURUMU}","${OKUMADURUMU}","${ONCEKITUKETIM}","${ONCEKITUKETIMM3}","${ORTALAMATUKETIM}","${ORTALAMATUKETIMM3}","${PILDURUMU}","${SAYACDATAID}","${SAYACHATA}","${SAYACID}","${SAYACTUKETIM}","${SAYACTUKETIMM3}","${SONKREDIYUKLENMETARIHI}","${UPDATEDATE}","${UPDATEUSER}","${VANADURUMU}","${VERIAYI}","${VERIGUNU}","${VERIYILI}","${VERSION}","${ETL_INSERT_DATE}")</value>
+                            </entry>
+                            <entry>
+<key>Character Set</key>
+<value>UTF-8</value>
+                            </entry>
+                            <entry>
+<key>Maximum Buffer Size</key>
+<value>1 MB</value>
+                            </entry>
+                            <entry>
+<key>Replacement Strategy</key>
+<value>Regex Replace</value>
+                            </entry>
+                            <entry>
+<key>Evaluation Mode</key>
+<value>Entire text</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>ReplaceText</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.standard.ReplaceText</type>
+                </processors>
+            </contents>
+            <name>gprssayacdetail_stream</name>
+            <variables/>
+        </processGroups>
+    </snippet>
+    <timestamp>09/06/2019 14:48:40 EEST</timestamp>
+</template>
