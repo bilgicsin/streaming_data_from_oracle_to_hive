@@ -1,0 +1,1 @@
+# streaming_data_from_oracle_to_hive
